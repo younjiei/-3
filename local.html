@@ -1,0 +1,36 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+      ['연도','서울특별시','세종특별자치시','경기도'],
+      ['2013',84066.0,	1111.0,112129.0],
+      ['2014',83711.0	,1344.0,112169.0],
+      ['2015',83005.0	,2708.0,113495.0],
+      ['2016',75536.0	,3297.0,105643.0],
+      ['2017',65389.0	,3504.0,94088.0],
+      ['2018',58074.0	,3703.0	,88175.0],
+      ['2019',53673.0	,3819.0	,83198.0]
+      ]);
+
+      var options = {
+        title: '연도 별 출생아 수 합',
+        curveType: 'function',
+        legend: { position: 'bottom' },
+        vAxis: {title: '출생아 수'}
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="curve_chart" style="width: 900px; height:700px"></div>
+</body>
+</html>

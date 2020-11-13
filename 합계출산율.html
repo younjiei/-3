@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['시도','합계출산율'],
+          [ '서울특별시',0.873000],
+          [ '부산광역시',1.004333],
+          [ '대구광역시',1.092833],
+          ['인천광역시',1.087500],
+          ['광주광역시',1.085333],
+          ['대전광역시',1.104833],
+          ['울산광역시',1.302833],
+          ['세종특별자치시',1.629000],
+          ['경기도',1.120167],
+          ['강원도',1.178000],
+          ['충청북도',1.265333],
+          ['충청남도',1.311667],
+          ['전라북도',1.183000],
+          ['전라남도',1.385167],
+          ['경상북도',1.296667],
+          ['경상남도',1.266500],
+          ['제주특별자치도',1.343333]
+        ]);
+
+        var options = {
+          title: '합계출산율 평균(2014~2019년)',
+          width: 900,
+          legend: { position: 'none' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: '합계출산율'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

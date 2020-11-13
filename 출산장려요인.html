@@ -1,0 +1,36 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['출산 대책','선호도'],
+        ['교육비 부담 완화',21.2],
+        ['출산 휴가 및 배우자 출산 휴가 확대',18.1],
+        ['주거 부담 완화',17.1],
+        ['가구의 소득 증대',16.9],
+        ['여성 경력 단절 부담 완화',10.3],
+        ['출산장려금 확대',9.2],
+        ['임신 및 출산 진료비 지원 확대',7.1],
+        ['기타',0.1]
+        ]);
+
+        var options = {
+          title: '출산 정책 중요도 설문조사(2019년)'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['연도', '출생아수'],
+				['1997',56282.833333 ],
+				['1998',	53466.166667],
+				['1999',	51722.333333],
+				['2000'	,53340.750000],
+				['2001'	,46661.166667],
+				['2002'	,41409.250000],
+				['2003'	,41253.000000],
+				['2004'	,39746.500000],
+				['2005'	,36558.916667],
+				['2006'	,37646.583333],
+				['2007'	,41401.833333],
+				['2008'	,38824.333333],
+				['2009'	,37070.750000],
+				['2010'	,39180.916667],
+				['2011'	,39272.083333],
+				['2012'	,40379.166667],
+				['2013'	,36371.250000],
+				['2014'	,36286.250000],
+				['2015'	,36535.000000],
+				['2016'	,33853.583333],
+				['2017'	,29814.250000],
+				['2018'	,27235.166667],
+				['2019'	,25223.000000]
+			]);
+
+			var options = {
+				title: '연평균 출생아수(전국)',
+				curveType: 'function',
+				legend: { position: 'bottom' }
+			};
+
+			var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+			chart.draw(data, options);
+		}
+	</script>
+</head>
+<body>
+	<div id="curve_chart" style="width: 1000px; height: 800px"></div>
+</body>
+</html>

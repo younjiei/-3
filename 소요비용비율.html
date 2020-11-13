@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['소요예산비율','합계출산율'],
+        [ 1.19,1.52],
+        [3.09,1.46],
+        [2.96,1.45],
+        [1.97,1.43],
+        [1.81,1.42],
+        [1.8,1.38],
+        [1.08,1.32],
+        [0.4,1.27],
+        [4.93,1.69],
+        [1.58,1.24],
+        [0.7,1.23],
+        [0.39,1.19],
+        [1.33,1.19],
+        [1.48,1.19],
+        [1.93,1.11],
+        [0.51,0.97]
+
+        ]);
+
+        var options = {
+          title: '저출산 대응 사업 소요예산 비율vs합계출산액(2014~2016평균)',
+          hAxis: {title: '소요예산비율', minValue: 0, maxValue: 6},
+          vAxis: {title: '합계출산율', minValue: 0, maxValue: 3},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 700px;"></div>
+  </body>
+</html>

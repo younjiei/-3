@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        [ '시도','공립','사립','공립비율'],
+        ['강원'	,266	,101	,72.479564],
+        ['경기',1200,1037,53.643272],
+        ['경남',417,269,60.787172],
+        ['경북',470,237,66.478076],
+        ['광주',	130,	182	,41.666667],
+        ['대구',	111	,244	,31.267606],
+        ['대전',	99	,161,38.076923],
+        ['부산',	102	,306,	25.000000],
+        ['서울',	236	,594,28.433735],
+        ['세종',	57,	3	,95.000000],
+        ['울산',	89,	111,44.500000],
+        ['인천',	169,	234,41.935484],
+        ['전남',	432	,110	,79.704797],
+        ['전북',	362,	157,69.749518],
+        ['제주',	101	,22,82.113821],
+        ['충남',	370,	128,	74.297189],
+        ['충북',	245	,82	,74.923547]
+      ]);
+
+      var options = {
+          colorAxis: {colors: ['gray', 'blue','black']},
+          title: '공립유치원vs사립유치원(2019년)',
+          hAxis: {title: '공립유치원 수'},
+          vAxis: {title: '사립유치원 수'}
+        };
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 2000px; height: 900px;"></div>
+  </body>
+</html>
